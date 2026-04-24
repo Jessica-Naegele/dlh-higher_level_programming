@@ -7,8 +7,8 @@ if __name__ == "__main__":
         print("0 arguments.")
     elif count == 1:
         print("1 argument:") 
-        print(sys.argv[1])
+        print("1: {}".format(sys.argv[1]))
     else:
         print("{} agruments:".format(count))
         for i in range(1, count+1):
-            print(sys.argv[i])
+            print("{}: {}".format(i, sys.argv[i]))
