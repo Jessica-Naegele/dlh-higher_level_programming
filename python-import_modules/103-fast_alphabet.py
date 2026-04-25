@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print(*(map(chr, range(65, 91))), sep="")
+import os
+os.write(1, bytes(list(range(65, 91)) + [10]))
