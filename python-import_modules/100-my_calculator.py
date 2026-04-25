@@ -9,22 +9,22 @@ if __name__ == "__main__":
     elif argv[2] == "+":
         a = int(argv[1])
         b = int(argv[3])
-        c = add(a,b)
+        c = add(a, b)
         print("{} + {} = {}".format(a, b, c))
     elif argv[2] == "-":
         a = int(argv[1])
         b = int(argv[3])
-        c = sub(a,b)
+        c = sub(a, b)
         print("{} - {} = {}".format(a, b, c))
     elif argv[2] == "*":
         a = int(argv[1])
         b = int(argv[3])
-        c = mul(a,b)
+        c = mul(a, b)
         print("{} * {} = {}".format(a, b, c))
     elif argv[2] == "/":
         a = int(argv[1])
         b = int(argv[3])
-        c = div(a,b)
+        c = div(a, b)
         print("{} / {} = {}".format(a, b, c))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
