@@ -16,3 +16,11 @@ print(add_tuple(tuplea, tupleb))
 tuplea = 1
 tupleb = (1,2)
 print(add_tuple(tupleb, tuplea))
+
+tuplea = 1
+tupleb = 1
+print(add_tuple(tupleb, tuplea))
+
+tuplea = ()
+tupleb = ()
+print(add_tuple(tupleb, tuplea))
