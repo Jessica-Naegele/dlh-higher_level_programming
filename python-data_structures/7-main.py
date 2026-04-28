@@ -8,3 +8,11 @@ print(new_tuple)
 
 print(add_tuple(tuple_a, (1, )))
 print(add_tuple(tuple_a, ()))
+
+tuplea = 1
+tupleb = (1,2)
+print(add_tuple(tuplea, tupleb))
+
+tuplea = 1
+tupleb = (1,2)
+print(add_tuple(tupleb, tuplea))
