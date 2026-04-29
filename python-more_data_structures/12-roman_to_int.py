@@ -6,18 +6,21 @@ def roman_to_int(roman_string):
                 'C': 100, 'CC': 200, 'CCC': 300, 'CD': 400, 'D': 500,
                 'DC': 600, 'DCC': 700, 'DCCC': 800, 'CM': 900, 'M': 1000,
                 'MM': 2000, 'MMM': 3000}
-    slice_string = roman_string
-    no = 0
-    x = 0
-    while x < len(roman_string):
-        if slice_string[:2] in roman_no:
-            x = x + 2
-            j = slice_string[:2]
-            slice_string = slice_string[2:]
-            no = no + roman_no[j]
-        else:
-            x = x + 1
-            j = slice_string[0]
-            slice_string = slice_string[1:]
-            no = no + roman_no[j]
-    return no
+    if isinstance(roman_string, str):
+        slice_string = roman_string
+        no = 0
+        x = 0
+        while x < len(roman_string):
+            if slice_string[:2] in roman_no:
+                x = x + 2
+                j = slice_string[:2]
+                slice_string = slice_string[2:]
+                no = no + roman_no[j]
+            else:
+                x = x + 1
+                j = slice_string[0]
+                slice_string = slice_string[1:]
+                no = no + roman_no[j]
+        return no
+    else:
+        return None
