@@ -23,4 +23,4 @@ def roman_to_int(roman_string):
                 no = no + roman_no[j]
         return no
     else:
-        return None
+        return 0
