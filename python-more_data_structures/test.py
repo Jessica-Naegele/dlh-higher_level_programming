@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-my_list=[(1, 2), (2, 1), (3, 10), (4, 2)]
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
 
-new_list = [(x * y) for x, y in my_list]
 
-j = []
-for i in  range(0, len(my_list)):
-    j.append(my_list[i][1])
-    print(my_list[i][1])
 
-print(new_list)
-print(len(my_list))
-print(sum(new_list))
-print(sum(j))
-#print(sum(my_list))
-print(sum(new_list)/sum(j))
+print("Matrix: {}".format(matrix))
+new_m = [list(map(lambda x: x * 2, row) for row in matrix)]
+print(new_m)
+#    print(list(map(lamba x: x*2, matrix)))
+#    return list(map(lambda x: x**2, matrix))
