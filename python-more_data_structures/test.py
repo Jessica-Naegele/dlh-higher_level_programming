@@ -1,22 +1,19 @@
 #!/usr/bin/python3
-a_dictionary = {'lang': "C", 'track': "Low", 'pref': "C", 'ids': [1, 2, 3]}
-key = 'LANG'
+a_dictionary = { 'c': "a", 'd': "a"  }
+value = 'a'
+
+print(value)
 new_dict = dict()
-k = ''
 t = False
-l = len(a_dictionary)
 for i in a_dictionary:
-    #print(a_dictionary[i])
-    if a_dictionary[i] == key:
+    if a_dictionary[i] == value:
         t = True
-print(t)
+    print(t)
 if t:
     for j in a_dictionary:
-        if a_dictionary[j] != key:
+        print(j)
+        if a_dictionary[j] != value:
+            print(a_dictionary[j])
             new_dict[j] = a_dictionary[j]
-else: 
-    new_dict = a_dictionary
-
-print(new_dict)    
-
-
+    a_dictionary = new_dict
+print(a_dictionary)
