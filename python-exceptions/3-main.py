@@ -11,5 +11,5 @@ b = 0
 result = safe_print_division(a, b)
 print("{:d} / {:d} = {}".format(a, b, result))
 
-result = safe_print_division(a,)
+result = safe_print_division(a,'')
 print("{:d} / {:d} = {}".format(a, b, result))
