@@ -1,20 +1,14 @@
 #!/usr/bin/python3
 def safe_print_list(my_list=[], x=0):
+    count = 0
     try:
-        for i in range(0, x):
+        for i in range(x):
             print(my_list[i], end="")
-        print("")
-        return x
-    except TypeError:
-        print("List is expected")
-        return 0
+            count += 1
     except IndexError:
-        j = 0
-        for i in my_list:
-            j = j + 1
-            print(i, end="")
+        # We hit the end of the list before reaching x
+        pass
+    finally:
+        # This runs whether we hit an error or not
         print("")
-        return j
-    except KeyError:
-        print("List is expected")
-        return 0
+    return count
