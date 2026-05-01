@@ -1,4 +1,3 @@
 #!/usr/bin/python3
 def raise_exception_msg(message=""):
-    print(message)
-    return message + variable * 4
+    raise NameError(message)
