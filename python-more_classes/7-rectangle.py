@@ -7,14 +7,13 @@ class Rectangle:
 
     # public class attributes
     number_of_instances = 0
-    print_symbol = []
+    print_symbol = "#"
 
-    def __init__(self, width=0, height=0, print_symbol="#"):
+    def __init__(self, width=0, height=0):
         """Initialisation of default values 0 for width and height"""
         self.width = width
         self.height = height
         type(self).number_of_instances += 1
-        self.print_symbol = print_symbol
 
     # private instance width
     @property
@@ -70,4 +69,4 @@ class Rectangle:
     # deletion
     def __del__(self):
         type(self).number_of_instances -= 1
-        print("By rectangle...")
+        print("Bye rectangle...")
