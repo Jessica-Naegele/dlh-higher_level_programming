@@ -66,7 +66,7 @@ class Rectangle:
             return "\n"
         else:
             list = []
-            for i in range (self.__width):
+            for i in range(self.__width):
                 list.append(self.print_symbol * self.__width)
             return "\n".join(list)
 
