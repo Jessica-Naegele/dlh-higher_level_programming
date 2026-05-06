@@ -64,7 +64,7 @@ class Rectangle:
         else:
             list = []
             for i in range(self.__height):
-                l.append(str(self.print_symbol) * self.__width)
+                list.append(str(self.print_symbol) * self.__width)
         return "\n".join(list)
 
     # deletion
