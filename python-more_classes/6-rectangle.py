@@ -61,7 +61,7 @@ class Rectangle:
             return "\n"
         else:
             list = []
-            for i in range (self.__height):
+            for i in range(self.__height):
                 list.append("#" * self.__width)
             return "\n".join(list)
 
@@ -72,4 +72,4 @@ class Rectangle:
     # delete rectangle
     def __del__(self):
         type(self).number_of_instances -= 1
-        print("Bye rectangle ...")
+        print("Bye rectangle...")
