@@ -5,7 +5,6 @@
 def save_to_json_file(my_obj, filename):
     """Function creates a json file and saves str"""
     import json
-    # json.dumps needs to  be used
-    text = json.dumps(my_obj)
+    # json.dump needs to  be used)
     with open(filename, "w", encoding="utf-8") as js:
-        js.write(text)
+        json.dump(my_obj, js)
