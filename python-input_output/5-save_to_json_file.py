@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module saves string into json file"""
+"""Module creates a function returning a JSON string"""
 
 
 def save_to_json_file(my_obj, filename):
