@@ -16,11 +16,7 @@ def convert_csv_to_json(filename):
         print(reader)
         print(content)
         with open("data.json", "w") as jsfile:
-            jsfile.write("[")
-            for row in content:
-                jsfile.write("\n")
-                json.dump(row, jsfile)
-            jsfile.write("\n]")
+            json.dump(row, jsfile)
         return True
     except (FileNotFoundError, EOFError):
         return False
