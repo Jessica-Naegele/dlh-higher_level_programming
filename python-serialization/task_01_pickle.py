@@ -39,10 +39,10 @@ class CustomObject:
             it will load and return an instance of he CustomObject
             from provided filename
         """
-        if os.path.exists(filename):
+        try:
             with open(filename, "rb") as pc:
                 data = pickle.load(pc)
             return data
             cls.display(data)
-        else:
-            raise pickle.UnpicklingError(None)
+        except (pickle.UnpicklingError, FileNotFoundError, EOFError):
+            return None

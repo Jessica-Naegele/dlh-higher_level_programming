@@ -13,3 +13,16 @@ obj.serialize("object.pkl")
 new_obj = CustomObject.deserialize("object.pkl")
 print("\nDeserialized Object:")
 new_obj.display()
+
+# 1. Test Non-existent file
+print("Testing non-existent file...")
+res1 = CustomObject.deserialize("does_not_exist.pkl")
+print(f"Result: {res1}") # Should be None
+
+# 2. Test Malformed file
+print("\nTesting malformed file...")
+with open("bad_data.txt", "w") as f:
+    f.write("This is not a pickle object!")
+
+res2 = CustomObject.deserialize("bad_data.txt")
+print(f"Result: {res2}") # Should be None
