@@ -1,0 +1,43 @@
+#!/usr/bin/python3
+"""
+12-main
+"""
+pascal_triangle = __import__('12-pascal_triangle').pascal_triangle
+
+print("1")
+pascal_triangle(1)
+
+print("---")
+
+print("2")
+pascal_triangle(2)
+
+
+print("---")
+
+print("3")
+pascal_triangle(3)
+
+print("---")
+
+
+print("4")
+pascal_triangle(4)
+
+print("---")
+"""
+12-main
+"""
+pascal_triangle = __import__('12-pascal_triangle').pascal_triangle
+
+def print_triangle(triangle):
+    """
+    Print the triangle
+    """
+    for row in triangle:
+        print("[{}]".format(",".join([str(x) for x in row])))
+
+
+if __name__ == "__main__":
+    print_triangle(pascal_triangle(5))
+
