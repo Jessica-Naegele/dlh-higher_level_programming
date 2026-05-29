@@ -11,29 +11,35 @@ status = {
 # total file size
 total_size = 0
 line_count = 0
-final_text = ()
 
 """ Input format: <IP Address> - [<date>]
 "GET /projects/260 HTTP/1.1" <status code> <file size>"""
 if __name__ == "__main__":
-    for line in sys.stdin:
-        parts = line.split()
-        # creates a list with every single aspect of the input
-        status_code = [-2]  # 2. letztes Attribut in der Liste
-        file_size = [-1]  # letztes Attribut in der liste
-        # add values to total_size and status
-        total_size += file_size
-        if status_code in status_counts:
-            status_counts[status_code] += 1
-        line_count += 1
-        # to enable printing after every 10th line
-        if line_count % 10 == 0:
-            # print must be inside the loop, otherwise, it will not print
-            for code in sorted(status.keys()):
-                if status[code] > 0:
-                    final_text.append(status.key, status[code])
+    try:
+        for line in sys.stdin:
+            parts = line.split()
 
-    print("File size: {}".format(total_size))
-    for row in final_text:
-        for i, j in row:
-            print("{}: {}".format(i, j))
+            # skipping lines that don't have enough data
+            if len(parts) < 2:
+                continue
+
+            # creates a list with every single aspect of the input
+            status_code = parts[-2]  # 2. letztes Attribut in der Liste
+            file_size = int(parts[-1])  # letztes Attribut in der liste
+            # add values to total_size and status
+            total_size += file_size
+            if status_code in status:
+                status[status_code] += 1
+            line_count += 1
+            # to enable printing after every 10th line
+            if line_count % 10 == 0:
+                # print must be inside the loop, otherwise, it will not print
+                print("File size: {}".format(total_size))
+                for code in sorted(status.keys()):
+                    if status[code] > 0:
+                        print("{}: {}".format(code, status[code]))
+    except KeyboardInterrupt:
+        print("File size: {}".format(total_size))
+        for code in sorted(status.keys()):
+            if status[code] > 0:
+                print("{}: {}".format(code, status[code]))
